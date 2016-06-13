@@ -117,6 +117,7 @@ How to use?
             'METADATA_AUTO_CONF_URL': '[The auto(dynamic) metadata configuration URL of SAML2]',
 
             # Optional settings
+            'ENTITY_ID': 'your entity id', # If not present this will be http://your-domain/saml2_auth/acs
             'NEW_USER_PROFILE': {
                 'USER_GROUPS': [],  # The default group name when a new user logs in
                 'ACTIVE_STATUS': True,  # The default active status for new users
