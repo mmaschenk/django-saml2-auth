@@ -60,9 +60,11 @@ def _get_saml_client(domain):
     import tempfile
     tmp = tempfile.NamedTemporaryFile()
     f = open(tmp.name, 'wb')
+    entityid = settings.SAML2_AUTH.get('ENTITY_ID', acs_url)
     f.write(_urllib.urlopen(settings.SAML2_AUTH['METADATA_AUTO_CONF_URL']).read())
     f.close()
     saml_settings = {
+        'entityid': entityid,
         'metadata': {
             'local': [tmp.name],
         },
